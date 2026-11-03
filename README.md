@@ -2,11 +2,11 @@
 
 > Independent, self-directed portfolio demo for a fictional city. Not affiliated with any real city or government agency.
 
-**Status:** In progress, started [date]. See [PROGRESS.md](PROGRESS.md).
+**Status:** In progress, started Nov 2, 2026. See [PROGRESS.md](PROGRESS.md).
 
 ## Purpose
 
-[1–2 sentences: a Dynamics 365 Customer Service configuration plus a QA lifecycle in Azure DevOps]
+A Dynamics 365 Customer Service configuration plus a QA lifecycle in Azure DevOps
 
 ## Audience
 
