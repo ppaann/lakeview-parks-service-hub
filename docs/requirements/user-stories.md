@@ -80,8 +80,10 @@ so that staff can link cases to real assets without typing each one in.
 
 - AC-05.1: The CSV columns are Asset ID, Name, Type, Location, Condition, Responsible Team
   and Status. Asset ID and Name are required; a row missing either is rejected.
-- AC-05.2: Asset ID is unique. A row whose Asset ID already exists, or appears twice in the
-  file, does not create a second record.
+- AC-05.2: Asset ID is unique. In an import of new assets, a row whose Asset ID already
+  exists, or appears twice in the file, is rejected and reported; the existing asset is not
+  changed. Updating an existing asset is a separate, deliberate action (editing the record),
+  never a side effect of importing new assets.
 - AC-05.3: A row with a value that isn't in a choice list (for example, Condition = "Broken")
   is rejected, and the import log identifies the row.
 - AC-05.4: After the import, the success and failure counts in the import log match the
