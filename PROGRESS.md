@@ -2,7 +2,7 @@
 
 > Independent, self-directed portfolio demo for a fictional city. Not affiliated with any real city or government agency.
 
-**Last updated:** Mon Nov 2, 2026 (Day 1 session)
+**Last updated:** Tue Nov 3, 2026
 
 ## What it is and who it serves
 
@@ -35,7 +35,7 @@ Staff log cases, route them to queues, and meet a response-time SLA. A small ass
 | Copilot Service admin center opens                                            | Planned (check at Day 1)  | n/a                                                                         |
 | Copilot Service workspace browser support (Edge/Chrome)                       | Planned (verify on Learn) | n/a                                                                         |
 | GitHub repo, README notice, .gitignore, PROGRESS.md                           | Verified                  | Commit 13d378a pushed Nov 2; private notes s1-01; .gitignore rules checked with `git check-ignore` |
-| User stories (6–8)                                                            | Planned (next: Task 1.2)  | n/a                                                                         |
+| User stories (6–8)                                                            | Drafted, awaiting Pan's review (8 stories, 43 ACs; US-04–08 AI-assisted drafts) | n/a                                                                         |
 | Solution and publisher                                                        | Planned (Task 1.3)        | n/a                                                                         |
 | Everything else                                                               | Planned                   | n/a                                                                         |
 
@@ -50,6 +50,10 @@ Staff log cases, route them to queues, and meet a response-time SLA. A small ass
 - **D-07:** Test platforms are Mac (Edge, Chrome, Safari), iPhone and iPad (Power Apps mobile app). Windows and Android are documented as a coverage gap.
 - **D-08 (Nov 2):** This repo's `PROGRESS.md` is the master project record. The copy outside the repo is only a pointer.
 - **D-09 (Nov 2):** Monday's 2 hours were lost to planning, so the plan was rebalanced (below). The cut order was applied early: loader to 50 records, Playwright to 1 smoke test in Phase 1, SQL reconciliation to Phase 2. The ADO QA lifecycle stays protected. Pan can revise.
+- **D-10 (Nov 3):** Any user with the Front Desk or Supervisor role can change a case's Category (US-01, AC-01.4). No column-level security on Category; Category changes are audited (AC-01.5).
+- **D-11 (Nov 3):** Queue design (US-02): Facility Rental → Facility Rentals; Registration Issue and Refund Request → Registration & Payments; Complaint → Supervisor Review; Asset Maintenance → Parks Maintenance; no rule match → General Intake. Use **basic queues** plus routing rules (pick-based). Unified routing is a Phase 2 stretch goal, after a licensing check. General Intake kept as the safety net for API, email-to-case and unmatched categories (Pan, Nov 3).
+- **D-12 (Nov 3):** Queue views list the oldest items first (FIFO, AC-02.6), sorted by the case's **Created On** (Pan, Nov 3), so cases closest to an SLA breach stay visible, even after re-categorization.
+- **D-13 (Nov 3):** Business first-response SLA (US-03): all categories except Asset Maintenance, warning at 1 business day and failure at 3 business days; Asset Maintenance, warning at 2 and failure at 6 business hours. Clock starts at Created On, pauses while On Hold, runs only in business hours (default Mon–Fri 8:00–17:00 Pacific unless Pan changes it). A short test SLA is a test-plan item, not a requirement.
 
 ## Risks
 
@@ -59,6 +63,10 @@ Staff log cases, route them to queues, and meet a response-time SLA. A small ass
 - **R-04:** Friday is overloaded. Cut order: loader to 50 records → Playwright to 2 tests → SQL reconciliation to Phase 2. *(Applied early on Nov 2; see D-09.)*
 - **R-05:** The trial expires after 14 days of inactivity. Log in at least every few days.
 - **R-06:** Copilot Service workspace browser support isn't verified yet.
+- **R-07:** Microsoft Learn documents basic routing rules for cases created from email and social posts. Automatic routing of form- and Web API-created cases is unverified (AC-02.4); check Wed.
+- **R-08:** The SLA for Asset Maintenance depends on Category (Applicable When), and Category can change (D-10). Microsoft Learn: changing an Applicable When field after the SLA starts cancels the KPI instance. Test re-categorization on Wed and document the behavior.
+- **R-09:** Unverified: whether column security can be enabled on the out-of-box Contact Birthday column (US-07). Fallback: a custom synthetic DOB column. Check on Learn before Thu.
+- **R-10:** 43 ACs vs a 20–30 test-case budget. Mitigation: one test case can cover several related ACs; US-08 ACs are Next phase.
 
 ## Approved plan, Phase 1 (CV-ready core), rebalanced Nov 2
 
