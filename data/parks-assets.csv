@@ -1,0 +1,31 @@
+Asset ID,Asset Name,Asset Type,Location,Condition,Response Team,Asset Status
+PA-0001,Lakeview Commons Playground A,Playground,Lakeview Commons,Good,Parks Maintenance,In Service
+PA-0002,Heron Point Park Restroom A,Restroom,Heron Point Park,Good,Facilities Maintenance,In Service
+PA-0003,Maple Hollow Park Sports Field Lighting A,Sports Field Lighting,Maple Hollow Park,Fair,Facilities Maintenance,In Service
+PA-0004,Ridgeline Trail Park Irrigation A,Irrigation,Ridgeline Trail Park,Good,Grounds & Irrigation,In Service
+PA-0005,Willow Creek Fields Bench & Picnic Table A,Bench & Picnic Table,Willow Creek Fields,Fair,Parks Maintenance,In Service
+PA-0006,Harbor Green Trail A,Trail,Harbor Green,Poor,Parks Maintenance,In Service
+PA-0007,Lakeview Commons Building A,Building,Lakeview Commons,Good,Facilities Maintenance,In Service
+PA-0008,Heron Point Park Playground A,Playground,Heron Point Park,Fair,Parks Maintenance,In Service
+PA-0009,Maple Hollow Park Restroom A,Restroom,Maple Hollow Park,Good,Facilities Maintenance,In Service
+PA-0010,Ridgeline Trail Park Sports Field Lighting A,Sports Field Lighting,Ridgeline Trail Park,Good,Facilities Maintenance,In Service
+PA-0011,Willow Creek Fields Irrigation A,Irrigation,Willow Creek Fields,Good,Grounds & Irrigation,In Service
+PA-0012,Harbor Green Bench & Picnic Table A,Bench & Picnic Table,Harbor Green,Critical,Parks Maintenance,Out of Service
+PA-0013,Lakeview Commons Trail A,Trail,Lakeview Commons,Fair,Parks Maintenance,In Service
+PA-0014,Heron Point Park Building A,Building,Heron Point Park,Good,Facilities Maintenance,In Service
+PA-0015,Maple Hollow Park Playground A,Playground,Maple Hollow Park,Fair,Parks Maintenance,In Service
+PA-0016,Ridgeline Trail Park Restroom A,Restroom,Ridgeline Trail Park,Poor,Facilities Maintenance,In Service
+PA-0017,Willow Creek Fields Sports Field Lighting A,Sports Field Lighting,Willow Creek Fields,Good,Facilities Maintenance,In Service
+PA-0018,Harbor Green Irrigation A,Irrigation,Harbor Green,Fair,Grounds & Irrigation,In Service
+PA-0019,Lakeview Commons Bench & Picnic Table A,Bench & Picnic Table,Lakeview Commons,Good,Parks Maintenance,In Service
+PA-0020,Heron Point Park Trail A,Trail,Heron Point Park,Good,Parks Maintenance,In Service
+PA-0021,Maple Hollow Park Building A,Building,Maple Hollow Park,Good,Facilities Maintenance,In Service
+PA-0022,Ridgeline Trail Park Playground A,Playground,Ridgeline Trail Park,Good,Parks Maintenance,In Service
+PA-0023,Willow Creek Fields Restroom A,Restroom,Willow Creek Fields,Fair,Facilities Maintenance,In Service
+PA-0024,Harbor Green Sports Field Lighting A,Sports Field Lighting,Harbor Green,Critical,Facilities Maintenance,Out of Service
+PA-0025,Lakeview Commons Irrigation A,Irrigation,Lakeview Commons,Fair,Grounds & Irrigation,In Service
+PA-0026,Heron Point Park Bench & Picnic Table A,Bench & Picnic Table,Heron Point Park,Poor,Parks Maintenance,In Service
+PA-0027,Maple Hollow Park Trail A,Trail,Maple Hollow Park,Good,Parks Maintenance,In Service
+PA-0028,Ridgeline Trail Park Building A,Building,Ridgeline Trail Park,Poor,Facilities Maintenance,Retired
+PA-0029,Willow Creek Fields Playground A,Playground,Willow Creek Fields,Good,Parks Maintenance,In Service
+PA-0030,Harbor Green Restroom A,Restroom,Harbor Green,Good,Facilities Maintenance,In Service

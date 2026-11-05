@@ -78,7 +78,7 @@ each asset's case history.
 As a Parks maintenance supervisor, I want to load our asset inventory from a spreadsheet,
 so that staff can link cases to real assets without typing each one in.
 
-- AC-05.1: The CSV columns are Asset ID, Name, Type, Location, Condition, Responsible Team
+- AC-05.1: The CSV columns are Asset ID, Name, Type, Location, Condition, Response Team
   and Status. Asset ID and Name are required; a row missing either is rejected.
 - AC-05.2: Asset ID is unique. In an import of new assets, a row whose Asset ID already
   exists, or appears twice in the file, is rejected and reported; the existing asset is not
