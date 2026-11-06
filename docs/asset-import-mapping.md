@@ -60,4 +60,4 @@ Any difference between expected and actual becomes a logged finding or defect.
 | Measure | Expected | Actual |
 |---|---|---|
 | New records created | 0 | **0** (Nov 4, 2026: Success 0, Errors 30, reported by Pan; all key violations expected) ✅ |
-| Parks Asset rows in Dataverse | unchanged | *(confirm the view still shows 36 rows)* |
+| Parks Asset rows in Dataverse | unchanged | **36** (unchanged; confirmed Nov 6) ✅ |
