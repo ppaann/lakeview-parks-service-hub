@@ -1,0 +1,14 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-05.1 [AC-05.1] Import rejects rows missing Asset ID or Asset Name",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: parks-assets.csv already imported (30 assets).","Precondition met.",,,
+,,,"2","Import data/parks-assets-negative.csv (no alternate key, Allow Duplicates No).","Import job completes.",,,
+,,,"3","Open the job's Failures and Success tabs.","Rows without Asset ID or Asset Name are listed under Failures, not imported.",,,
+,"Test Case","TC-05.2 [AC-05.2] Import rejects duplicate Asset IDs and keeps the existing asset",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","In the same import job, check rows PA-0001 and the second PA-0031.","Both listed under Failures (Asset ID key violated).",,,
+,,,"2","Open PA-0001.","Name is still 'Lakeview Commons Playground A'.",,,
+,"Test Case","TC-05.3 [AC-05.3] Import rejects invalid choice values",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","In the same import job, check rows PA-0033 (Condition 'Broken') and PA-0034 (Asset Type 'Swing Set').","Both rows rejected and reported.",,,
+,,,"2","Check the Condition and Asset Type choice lists.","No new options were added.",,,
+,"Test Case","TC-05.4 [AC-05.4, AC-05.5] Import counts are accurate and re-import creates no duplicates",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Import data/parks-assets.csv into an empty table.","Success 30, Failures 0; view shows 30 rows.",,,
+,,,"2","Import the same file again.","Success 0, Errors 30; row count unchanged.",,,

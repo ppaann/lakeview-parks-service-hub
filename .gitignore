@@ -154,3 +154,4 @@ playwright/.auth/
 *.storageState.json
 test-results/
 playwright-report/.DS_Store
+tests/manual/ado-import/export-template.csv

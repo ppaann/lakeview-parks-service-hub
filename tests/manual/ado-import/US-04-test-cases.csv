@@ -1,0 +1,12 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-04.1 [AC-04.1] Asset Maintenance requires a Parks Asset",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","New case: Category Asset Maintenance, no Parks Asset; Save.","Save blocked: Business Process Error 'Asset Maintenance cases must be linked to a Parks Asset.'",,,
+,,,"2","Select Parks Asset 'Lakeview Commons Playground A' (PA-0001); Save.","Case saves.",,,
+,"Test Case","TC-04.2 [AC-04.2] Other categories save without an asset",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","New case: Category Complaint, no Parks Asset; Save.","Case saves without error.",,,
+,"Test Case","TC-04.3 [AC-04.3] Asset record lists its linked cases",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","In Lakeview Parks Assets, open PA-0001.","Cases grid lists every case linked to PA-0001.",,,
+,,,"2","Open an asset with no linked cases (e.g., PA-0002).","Cases grid is empty.",,,
+,"Test Case","TC-04.4 [AC-04.4] Web API create without an asset is rejected",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Needs a Web API client.","Precondition met.",,,
+,,,"2","POST a case with Category Asset Maintenance and no lkv_parksasset through the Web API.","Request fails with the business rule error; no case created.",,,

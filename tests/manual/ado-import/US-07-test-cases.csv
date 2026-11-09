@@ -1,0 +1,19 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-07.1 [AC-07.1] Front Desk can't read or edit DOB and Payment Notes on forms",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Synthetic Birthday and Payment Notes set by admin; column security enabled; Lakeview Supervisors profile = supervisor only.","Precondition met.",,,
+,,,"2","Sign in as Front Desk test user (user1); open contact Claudia Mazzanti, Details tab.","Birthday shows a lock; no value visible; not editable.",,,
+,,,"3","Open the test case with synthetic Payment Notes.","Payment Notes shows a lock and ******; not editable.",,,
+,"Test Case","TC-07.2 [AC-07.2] Front Desk views and exports don't show secured values",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","As Front Desk test user (user1), open a Contacts view and add the Birthday column.","Values hidden.",,,
+,,,"2","Export the view to Excel and open the file.","Birthday column empty or masked for every row.",,,
+,"Test Case","TC-07.3 [AC-07.3] Web API hides secured columns from Front Desk",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","In Front Desk test user (user1)'s signed-in browser, GET /api/data/v9.2/contacts?$select=fullname,birthdate&$filter=fullname eq 'Claudia Mazzanti'.","birthdate is null.",,,
+,,,"2","GET /api/data/v9.2/incidents?$select=title,lkv_paymentnotes&$filter=title eq '<test case title>'.","lkv_paymentnotes is null.",,,
+,,,"3","Send a PATCH setting birthdate (Web API client, as Front Desk).","Request is rejected.",,,
+,"Test Case","TC-07.4 [AC-07.4] Supervisor can read and update secured columns (form and API)",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","As Supervisor test user (user2), open Claudia Mazzanti and the test case.","Birthday and Payment Notes values visible (key icon).",,,
+,,,"2","Update Payment Notes to a new synthetic value; Save.","Saved; new value shown.",,,
+,,,"3","Run the two GET requests from TC-07.3 in the Supervisor's session.","birthdate and lkv_paymentnotes return the values.",,,
+,"Test Case","TC-07.5 [AC-07.5] Minimal user can't open cases or contacts",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Sign in as minimal test user (user3, Basic User only); open Copilot Service workspace.","No access to the app, or no case records visible.",,,
+,,,"2","Open a case or contact by URL.","Access denied.",,,

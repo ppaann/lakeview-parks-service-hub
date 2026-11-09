@@ -1,0 +1,28 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-02.1 [AC-02.1] Save & Route sends each category to its queue",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Create a case with Category Facility Rental; select Save & Route, then Route.","Case appears in Facility Rentals; timeline shows 'added to Facility Rentals'.",,,
+,,,"2","Repeat with Registration Issue.","Case appears in Registration & Payments.",,,
+,,,"3","Repeat with Refund Request.","Case appears in Registration & Payments.",,,
+,,,"4","Repeat with Complaint.","Case appears in Supervisor Review(Public).",,,
+,,,"5","Repeat with Asset Maintenance (with a Parks Asset).","Case appears in Parks Maintenance.",,,
+,"Test Case","TC-02.2 [AC-02.2] Case matching no category rule goes to General Intake",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Needs a Web API client (Category is only form-required).","Precondition met.",,,
+,,,"2","Create a case with no Category through the Web API (Route Case = Yes).","Case is created.",,,
+,,,"3","Check the queues.","Case appears in General Intake (catch-all rule).",,,
+,"Test Case","TC-02.3 [AC-02.3] Re-categorized case moves to the new queue",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Route a case with Category Registration Issue.","Case is in Registration & Payments.",,,
+,,,"2","Change Category to Facility Rental; Save & Route, then Route.","Case is in Facility Rentals.",,,
+,,,"3","Open Registration & Payments queue items.","The case is no longer listed there.",,,
+,"Test Case","TC-02.4 [AC-02.4] Case created through the Web API routes on create",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Needs a Web API client.","Precondition met.",,,
+,,,"2","POST a case with Category Complaint through the Web API (no explicit Route Case).","Case is created.",,,
+,,,"3","Check Supervisor Review(Public).","Case appears without any manual routing step.",,,
+,"Test Case","TC-02.5 [AC-02.5] Worked By is empty until a representative picks the item",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Route a case to Facility Rentals.","Queue item listed; Worked By is empty; case Owner unchanged.",,,
+,,,"2","As Front Desk test user (user1), open the queue item and select Pick.","Worked By shows the Front Desk user.",,,
+,"Test Case","TC-02.6 [AC-02.6] Queue lists oldest cases first by Created On",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Route two cases to the same queue, the older one second (e.g., re-route an older case).","Both items listed.",,,
+,,,"2","Open the queue's items view.","Items are ordered oldest first by the case's Created On.",,,
+,"Test Case","TC-02.7 [AC-02.1 (negative)] Plain Save doesn't route a form-created case",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Create a case with Category Complaint and select Save only.","Saved.",,,
+,,,"2","Wait 2 minutes; check the timeline and Supervisor Review(Public).","No 'added to queue' post; case not in any queue.",,,

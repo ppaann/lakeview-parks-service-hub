@@ -1,0 +1,18 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-01.1 [AC-01.1] Category lists exactly the 5 values",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","As admin, open Copilot Service workspace and select New Case.","The case form opens with a required Category field.",,,
+,,,"2","Open the Category drop-down.","Exactly 5 values: Facility Rental, Registration Issue, Refund Request, Complaint, Asset Maintenance (plus the empty --Select-- entry).",,,
+,"Test Case","TC-01.2 [AC-01.2] Case without Category is not saved",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","New Case: enter Case Title and Customer; leave Category empty.","Fields accept input.",,,
+,,,"2","Select Save.","The case is not saved; Category is flagged as required.",,,
+,"Test Case","TC-01.3 [AC-01.3] Invalid Category value is rejected through the Web API",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Needs a Web API client that can send POST requests.","Precondition met.",,,
+,,,"2","With a Web API client signed in as admin, POST a case with lkv_category set to an integer that isn't one of the 5 option values.","The request fails with an error; no case is created.",,,
+,,,"3","Query cases by that title.","No record exists.",,,
+,"Test Case","TC-01.4 [AC-01.4] Front Desk can change Category; minimal user can't",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Sign in as Front Desk test user (user1). Open an existing test case, change Category, Save.","Saved; the new Category is shown.",,,
+,,,"2","Sign in as minimal test user (user3, Basic User only). Try to open the same case.","The case can't be opened or edited (no access).",,,
+,"Test Case","TC-01.5 [AC-01.5] Category change is recorded in audit history",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Auditing enabled for the environment, Case table and Category column.","Precondition met.",,,
+,,,"2","As admin, change the Category of a test case and Save.","Saved.",,,
+,,,"3","Open the case's Audit History.","An entry shows old value, new value, the user and the time.",,,

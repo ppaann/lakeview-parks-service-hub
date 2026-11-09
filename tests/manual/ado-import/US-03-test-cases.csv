@@ -1,0 +1,19 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,"Test Case","TC-03.1 [AC-03.4] SLA succeeds when a first response is sent before failure (test SLA)",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Lakeview Response SLA active and default; TEST item: titles starting SLA-TEST, warn 5 min, fail 10 min, 24/7.","Precondition met.",,,
+,,,"2","Create a case titled 'SLA-TEST <n> success', any category; Save; note the time.","SLA KPI instance First Response By – Case is In progress.",,,
+,,,"3","Within 5 minutes set First Response Sent = Yes; Save; refresh the SLA grid.","KPI instance status Succeeded; Succeeded On filled in.",,,
+,"Test Case","TC-03.2 [AC-03.5] SLA warns then fails without a response (test SLA)",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: As TC-03.1.","Precondition met.",,,
+,,,"2","Create a case titled 'SLA-TEST <n> warn and fail'; Save; note the time.","KPI instance In progress.",,,
+,,,"3","After about 5 minutes refresh the SLA grid.","Nearing noncompliance; Warning Time shown.",,,
+,,,"4","After about 10 minutes refresh.","Noncompliant; Failure Time shown.",,,
+,"Test Case","TC-03.3 [AC-03.6] SLA clock pauses while the case is On Hold",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: SLA item allows pause and resume with an On Hold pause condition.","Precondition met.",,,
+,,,"2","Create an SLA-TEST case; after 2 minutes set Status Reason = On Hold; Save.","KPI instance Paused.",,,
+,,,"3","Wait 6 minutes, then set status back to In Progress.","KPI resumes; Warning/Failure times shift by the paused time (no warning reached during hold).",,,
+,"Test Case","TC-03.4 [AC-03.1–03.3] Business SLA uses business hours and category durations",,,,"Lakeview Resident Service Hub",,"Design"
+,,,"1","Precondition check: Business SLA items and business-hours calendar configured (Next phase).","Precondition met.",,,
+,,,"2","Create a Complaint case on a weekday during business hours.","Warning time = Created On + 9 business hours; Failure = + 27 business hours.",,,
+,,,"3","Create an Asset Maintenance case.","Warning = + 2 business hours; Failure = + 6 business hours.",,,
+,,,"4","Create a case on Friday at 4:30 pm.","Clock skips the weekend (Mon–Fri 8:00–17:00 Pacific).",,,
